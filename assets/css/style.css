@@ -18,6 +18,29 @@ body {
                         "badge contador form";
                         grid-gap: 10px;
 }
+/*------ [AREAS GRID] ----- 
+-------------------------------------*/
+
+
+.badge {
+    grid-area: badge; /*designacion del area a ocupar*/
+}
+.title {
+    grid-area: title; /*designacion del area a ocupar*/
+}
+
+.description {
+    grid-area: description; /*designacion del area a ocupar*/
+}
+
+.contador {
+    grid-area: contador; /*designacion del area a ocupar*/
+}
+
+.form {
+    grid-area: form; /*designacion del area a ocupar*/
+  
+}
 
 .badge img {
     max-width: 70px;
@@ -89,29 +112,7 @@ body {
     text-align: center;
 }
 
-/*------ [AREAS GRID] ----- 
--------------------------------------*/
 
-
-.badge {
-    grid-area: badge; /*designacion del area a ocupar*/
-}
-.title {
-    grid-area: title; /*designacion del area a ocupar*/
-}
-
-.description {
-    grid-area: description; /*designacion del area a ocupar*/
-}
-
-.contador {
-    grid-area: contador; /*designacion del area a ocupar*/
-}
-
-.form {
-    grid-area: form; /*designacion del area a ocupar*/
-  
-}
 
 
 
