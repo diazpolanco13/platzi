@@ -1,34 +1,30 @@
 body {
     margin: 0;
 }
-.grid-container {
-    display: grid;
-    grid-template-columns: minmax(auto, 1024px);
-    justify-content: center;
-}
 .hero {
     background-color: #23475b;
     color: white;
     padding: 32px 15px;
     font-family: 'Lato', sans-serif;
-    display: grid;  
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
+}
+.hero-container {
+    display: inherit;  
     grid-template-columns: 70px 1fr 320px; 
     grid-template-areas:"badge title form"
-                        ". description form"
-                        ". countdow form";
-    grid-gap: 10px;
-}
-.badge {
-    grid-area: badge; /*designacion del area a ocupar*/
+                        "badge description form"
+                        "badge contador form";
+                        grid-gap: 10px;
 }
 
 .badge img {
-   width: 70px;
+    max-width: 70px;
 }
 
 
 .title {
-    grid-area: title; /*designacion del area a ocupar*/
     font-size: 36px;
     font-weight: normal;
     margin: 0;
@@ -36,7 +32,7 @@ body {
     align-items: center;
 }
 .form {
-    grid-area: form; /*designacion del area a ocupar*/
+    display: grid;
     align-items: center;
     background: rgba(255, 255, 255, .9);
     padding: 1.5em;
@@ -65,33 +61,78 @@ body {
     font-size: 16px;
     border-bottom: 4px solid #6d932b;
     display: inline-block;
-
+    width: 60%;
+    border-radius: 5px;
+    
+    
 }
-.description {
-    grid-area: description; /*designacion del area a ocupar*/
-}
-.countdown {
-    grid-area: countdown; /*designacion del area a ocupar*/
-    align-items: center;
-}
-.countdown p {
+.contador p {
     font-size: 20px;
     text-align: center;
     font-weight: 300;
 }   
-.countdown span {
+.contador span {
     font-size: 33px;
     font-weight: 300;
 }
 
-.countdown span:after {
+.contador span:after {
     content: ":";
     display: inline-block;
     margin: 0 5px;
 }
-.countdown span:last-child:after { /*seudo clase avanzada para eliminar el ultimo hijo de un elemtno*/
+.contador span:last-child:after { /*seudo clase avanzada para eliminar el ultimo hijo de un elemtno*/
     display: none;
 }
-p {
+.form p {
     margin: 0;
+    text-align: center;
+}
+
+/*------ [AREAS GRID] ----- 
+-------------------------------------*/
+
+
+.badge {
+    grid-area: badge; /*designacion del area a ocupar*/
+}
+.title {
+    grid-area: title; /*designacion del area a ocupar*/
+}
+
+.description {
+    grid-area: description; /*designacion del area a ocupar*/
+}
+
+.contador {
+    grid-area: contador; /*designacion del area a ocupar*/
+}
+
+.form {
+    grid-area: form; /*designacion del area a ocupar*/
+  
+}
+
+
+
+/*------ [MEDIA QUERY] ----- 
+-------------------------------------*/
+
+
+@media screen and (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 70px 1fr; 
+        grid-template-areas:"badge title"
+                            "badge description"
+                            "badge contador"
+                            "form form";
+                            grid-gap: 10px;
+    }
+    .contador p {
+        margin: 10px;
+    }
+    .description p {
+        margin: 10px;
+    }
+    
 }
